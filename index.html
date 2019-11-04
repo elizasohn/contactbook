@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
-    <script src="js/scripts.js" type="text/javascript"></script>
-    <title>TITLE</title>
-  </head>
-  <body>
-    <div class="container main">
-      <div class="jumbotron header">
-        <h1>HEADING</h1>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
+  <script src="js/templates.js" type="text/javascript"></script>
+  <script src="js/scripts.js" type="text/javascript"></script>
+  <title>TITLE</title>
+</head>
+<body>
+  <div class="container main">
+    <div class="jumbotron header">
+      <div id="head">
+        <h1>Address Book</h1>
         <h3>SUBHEADING</h3>
       </div>
+
+      <form id="contactForm">
+        <div class="formGroup">
+          <label for="firstName">Enter First Name</label>
+          <input type="text" id="firstName">
+        </div>
+        <div class="formGroup">
+          <label for="lastName">Enter Last Name</label>
+          <input type="text" id="lastName">
+        </div>
+        <div class="formGroup">
+
+          <label for="phone">Enter Phone Number</label>
+          <input type="text" id="phone">
+        </div>
+        <button type="submit" class="btn btn-info">Create New</button>
+      </form>
+
     </div>
-  </body>
+    <div class="contacts row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <div class="card-header">
+            <h5>FULL NAME</h5>
+          </div>
+          <div class="card-body">
+            <div class="card-text">
+              <p class="number">555-555-5555</p>
+              <p>ID: 55555</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button id="delete" class="btn btn-info">DELETE</button>
+            <button id="update" class="btn btn-info">UPDATE</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
 </html>
