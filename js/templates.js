@@ -22,9 +22,16 @@ function makeContact(obj) {
 
 function makeForm(obj) {
   return `
-    <input class="first" type="text" placeholder="${obj.firstName}">
-    <input class="last" type="text" placeholder="${obj.lastName}">
-    <input class="number" type="text" placeholder="${obj.phoneNumber}">
-    <button class="submitUpdate btn btn-info">SUBMIT UPDATE</button>
+    <div class="card-header">
+      <h5>${obj.fullName()}</h5>
+    </div>
+    <div class="card-body">
+      <input class="first" type="text" placeholder="${obj.firstName}">
+      <input class="last" type="text" placeholder="${obj.lastName}">
+      <input class="number" type="text" placeholder="${obj.phoneNumber}">
+    </div>
+    <div class="card-footer">
+      <button class="submitUpdate btn btn-info">SUBMIT UPDATE</button>
+    </div>
   `
 }

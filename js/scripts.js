@@ -69,8 +69,12 @@ Contact.prototype.update = function(obj) {
 var addressBook = new AddressBook();
 var contact = new Contact("Ada", "Lovelace", "503-555-0100");
 var contact2 = new Contact("Grace", "Hopper", "503-555-0199");
+var contact3 = new Contact("Ada", "Lovelace", "503-555-0100");
+var contact4 = new Contact("Grace", "Hopper", "503-555-0199");
 addressBook.addContact(contact);
 addressBook.addContact(contact2);
+addressBook.addContact(contact3);
+addressBook.addContact(contact4);
 
 
 function storeContact(firstName, lastName, phoneNumber) {
@@ -104,18 +108,28 @@ $(document).ready(function() {
     $('.update').click(function(event) {
       var thisID = parseInt($(event.target).parents('.contact').find(".idSpan").text());
       thisContact = addressBook.findContact(thisID);
-      var thisBody = $(event.target).parents('.contact').find(".card-body");
-      thisBody.text('');
-      thisBody.append(makeForm(thisContact));
-      refresh()
+      var thisCard = $(event.target).parents('.contact');
+      thisCard.text('');
+      thisCard.append(makeForm(thisContact));
+
+      $('.submitUpdate').click(function(event) {
+        let updateObject = {
+          firstName: $('.first').val(),
+          lastName: $('.last').val(),
+          phoneNumber: $('.number').val()
+        };
+        thisContact.update(updateObject);
+        refresh();
+      });
+
     });
   }
 
   $('#contactForm').submit(function(event){
     event.preventDefault();
-    tempFirstName = $('#firstName').val();
-    tempLastName = $('#lastName').val();
-    tempPhoneNumber = $('#phone').val();
+    let tempFirstName = $('#firstName').val();
+    let tempLastName = $('#lastName').val();
+    let tempPhoneNumber = $('#phone').val();
     storeContact(tempFirstName, tempLastName, tempPhoneNumber);
     refresh();
   });
