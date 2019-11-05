@@ -8,12 +8,14 @@ function makeContact(obj) {
         <div class="card-body">
           <div class="card-text">
             <p class="number">${obj.phoneNumber}</p>
+            <p class="email">${obj.email}</p>
+            <p class="address">${obj.address}</p>
             <p>ID: <span class="idSpan">${obj.id}</span></p>
           </div>
         </div>
         <div class="card-footer">
-          <button class="delete btn btn-info">DELETE</button>
-          <button class="update btn btn-info">UPDATE</button>
+          <button value="${obj.id}" class="delete btn btn-info">DELETE</button>
+          <button value="${obj.id}" class="update btn btn-info">UPDATE</button>
         </div>
       </div>
     </div>
@@ -28,7 +30,9 @@ function makeForm(obj) {
     <div class="card-body">
       <input class="first" type="text" placeholder="${obj.firstName}">
       <input class="last" type="text" placeholder="${obj.lastName}">
-      <input class="number" type="text" placeholder="${obj.phoneNumber}">
+      <input class="phone" type="text" placeholder="${obj.phoneNumber}">
+      <input class="emailUpdate" type="text" placeholder="${obj.email}">
+      <input class="addressUpdate" type="text" placeholder="${obj.address}">
     </div>
     <div class="card-footer">
       <button class="submitUpdate btn btn-info">SUBMIT UPDATE</button>
